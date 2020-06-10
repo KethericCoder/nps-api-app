@@ -1,8 +1,8 @@
 "use strict";
 
-// put your own value below!
+// API Key and base URL
 const apiKey = "joMzJJlrcxndxCua5S8hPmmxEaVkKKS1ZyXe1mtS";
-const searchURL = "https://www.googleapis.com/youtube/v3/search";
+const searchURL = "developer.nps.gov/api/v1";
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -17,28 +17,25 @@ function displayResults(responseJson) {
   $("#results-list").empty();
   // iterate through the items array
   for (let i = 0; i < responseJson.items.length; i++) {
-    // for each video object in the items
+    // for each park object in the items
     //array, add a list item to the results
-    //list with the video title, description,
-    //and thumbnail
+    //list with the park name, url, and description
+
     $("#results-list").append(
-      `<li><h3>${responseJson.items[i].snippet.title}</h3>
-      <p>${responseJson.items[i].snippet.description}</p>
-      <img src='${responseJson.items[i].snippet.thumbnails.default.url}'>
+      `<li><h3>${responseJson.data[i].fullname}</h3>
+      <p>${responseJson.data[i].description}</p>
+      <p><a href="${responseJson.data[i].url}">${responseJson.data[i].url}</a></p>
       </li>`
     );
   }
-  //display the results section
   $("#results").removeClass("hidden");
 }
 
-function getYouTubeVideos(query, maxResults = 10) {
+function getNationalParks(query, maxResults = 10) {
   const params = {
     key: apiKey,
     q: query,
-    part: "snippet",
     maxResults,
-    type: "video",
   };
   const queryString = formatQueryParams(params);
   const url = searchURL + "?" + queryString;
@@ -63,7 +60,7 @@ function watchForm() {
     event.preventDefault();
     const searchTerm = $("#js-search-term").val();
     const maxResults = $("#js-max-results").val();
-    getYouTubeVideos(searchTerm, maxResults);
+    getNationalParks(searchTerm, maxResults);
   });
 }
 
