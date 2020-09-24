@@ -1,8 +1,8 @@
 "use strict";
 
 // API Key and base URL
-const apiKey = "joMzJJlrcxndxCua5S8hPmmxEaVkKKS1ZyXe1mtS";
-const searchURL = "developer.nps.gov/api/v1";
+const apiKey = "mmhtU1UKJ5ohZxhRR0e2ubMDnErrvH26xmiEYLzq",
+         searchURL = "https://developer.nps.gov/api/v1/";
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -33,6 +33,7 @@ function displayResults(responseJson) {
 
 function getNationalParks(query, maxResults = 10) {
   const params = {
+
     key: apiKey,
     q: query,
     maxResults,
