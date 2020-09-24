@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>National Park Finder</title>
-    <link rel="shortcut icon" href="#" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>National park finder</h1>
 
-      <form id="js-form">
-        <label for="search-term">Search State</label>
-        <input type="text" name="search-term" id="js-search-term" required />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Parks App</title>
+  <link rel="stylesheet" href="styles.css">
 
-        <label for="max-results">Maximum results to return</label>
-        <input
-          type="number"
-          name="max-results"
-          id="js-max-results"
-          value="10"
-        />
+</head>
 
-        <input type="submit" value="Go!" />
-      </form>
+<body>
+  <main>
+    <h1>Search U.S National Parks!</h1>
+    <form id="js-form">
+      <label for="search-state">Search State</label>
+      <input type="text" id="js-search-state" name="search-state" placeholder="State" required>
 
-      <p id="js-error-message" class="error-message"></p>
-      <section id="results" class="hidden">
-        <h2>Search results</h2>
-        <ul id="results-list"></ul>
-      </section>
-    </div>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"
-    ></script>
-    <script src="index.js"></script>
-  </body>
+      <label for="max-results">Maximum number of results</label>
+      <input type="number" id="js-max-results" name="max-results" value="10" min="1" max="10">
+
+      <input type="submit" class="js-submit" value="Search!">
+    </form>
+
+    <section id="js-results" class="hidden">
+      <h2>Park Results</h2>
+      <ul id="js-results-list">
+      </ul>
+    </section>
+
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>

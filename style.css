@@ -1,25 +1,53 @@
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: rgba(36, 98, 119, 0.952);
 }
 
-button, input[type="text"] {
-  padding: 5px;
+h1 {
+  color: rgba(24, 25, 27, 0.938);
 }
 
-button:hover {
-  cursor: pointer;
+form {
+  font-size: large;
+  border: solid rgba(15, 13, 13, 0.938) .5rem;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: fit-content;
+  padding: 1rem;
+  margin: auto;
+  color: rgba(24, 25, 27, 0.938);
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+input {
+  padding: .3rem;
+  border: solid rgba(41, 37, 37, 0.945) .2em;
+  margin: 2px;
 }
 
-.error-message {
-    color: red;
+.js-submit  {
+  padding: .5rem;
+
+}
+
+ul#js-results-list {
+  list-style-type: none;
+}
+
+li {
+  font-size: large;
+  border: solid rgba(2, 2, 2, 0.925) .2em;
+  width: 700px;
+  margin: auto;
+  padding: .2em;
 }
 
