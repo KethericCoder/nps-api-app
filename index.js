@@ -41,6 +41,8 @@ function getNatlParks(stateCode, limit = 10) {
   const queryString = formatQueryParams(params);
   const url = searchUrl + '?' + queryString;
 
+  
+
 
   fetch(url)
     .then(response => {
